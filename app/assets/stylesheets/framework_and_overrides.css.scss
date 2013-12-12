@@ -1,0 +1,70 @@
+// import the CSS framework
+@import "bootstrap";
+
+// make all images responsive by default
+img {
+  @extend .img-responsive;
+  margin: 0 auto;
+  }
+// override for the 'Home' navigation link
+.navbar-brand {
+  font-size: inherit;
+  }
+  // right layout
+  .right-layout {
+    float: right;
+  }
+
+  .row .col-md-6 {
+    width: 75%;
+    margin-left: 0px;
+  }
+
+  .row .col-md-6_right {
+    width: 20%;
+
+    margin-right: 0px;
+  }
+
+  .login_name {
+    float: right;
+    line-height: 20px;
+    padding: 15px 160px;
+    color: red;
+  }
+
+// THESE ARE EXAMPLES YOU CAN MODIFY
+// create your own classes
+// to make views framework-neutral
+.column {
+  @extend .col-md-6;
+  @extend .text-center;
+  }
+.form {
+  @extend .col-md-6;
+  }
+.form-centered {
+  @extend .col-md-6;
+  @extend .text-center;
+  }
+.submit {
+  @extend .btn;
+  @extend .btn-primary;
+  @extend .btn-lg;
+  }
+// apply styles to HTML elements
+// to make views framework-neutral
+main {
+  @extend .container;
+  background-color: #eee;
+  padding-bottom: 80px;
+  width: 100%;
+  margin-top: 51px; // accommodate the navbar
+  }
+section {
+  @extend .row;
+  margin-top: 20px;
+  }
+  .ads {
+    padding: 15px;
+  }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "My Shop" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "My Shop" %>">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+      <div class="container">
+        <%= render 'layouts/messages' %>
+        <div class="row clearfix">
+          <div class="col-md-6 column">
+            <%= yield %>
+          </div>
+          <div class="col-md-6_right column">
+            <%= render 'layouts/ads' %>
+            <%= render 'layouts/right_layout' %>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+
