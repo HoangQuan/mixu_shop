@@ -1,0 +1,23 @@
+<section id="product_types-index">
+  <% if notice %>
+    <%= notice %>
+  <% end %>
+  <%= link_to "Add new Product type", new_admin_product_type_path %>
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>No.</th>
+      <th>Name</th>
+      <th colspan="3">Action</th>
+    </tr>
+    <% @product_types.each_with_index do |product_type, i|%>  
+    <tr>
+      <td><%= i+1 %></td>
+      <td><%= product_type.name %></td>
+      <td><%= link_to "Show", admin_product_type_path(product_type) %></td>
+      <td><%= link_to "Edit", edit_admin_product_type_path(product_type) %></td>
+      <td><%= link_to "Destroy", admin_product_type_path(product_type), method: :delete, data: {confirm: "Are you sure?"} %></td> 
+    </tr>
+    <% end %>
+  </table>
+  <%= paginate @product_types %> 
+</section>

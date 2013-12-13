@@ -1,0 +1,41 @@
+<section products-show>
+  <% if notice %>
+    <%= notice %>
+  <% end %>
+  <table class="table table-striped table-bordered"> 
+    <tr>
+      <th>ID: </th>
+      <td><%= @product.id%></td>
+    </tr>
+    <tr>
+      <th>Name: </th>
+      <td><%= @product.name%></td>
+    </tr>
+    <tr>
+      <th>Size: </th>
+      <td><%= @product.size%></td>
+    </tr>
+    <tr>
+      <th>Type: </th>
+      <td><%= @product.product_type.try(:name)%></td>
+    </tr>
+    <tr>
+      <th>Image1: </th>
+      <td><%= image_tag @product.product_image1 if @product.product_image1 %></td>
+    </tr>
+    <tr>
+      <th>Image2: </th>
+      <td><%= image_tag @product.product_image2 if @product.product_image2 %></td>
+    </tr>
+    <tr>
+      <th>Image3: </th>
+      <td><%= image_tag @product.product_image3 if @product.product_image3 %></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= link_to "Back", admin_products_path %>
+        <%= link_to "Edit", edit_admin_product_path(@product) %>
+        <%= link_to "Destroy", admin_product_path(@product), method: :delete, data: {confirm: "Are you sure?"} %>
+      </td>
+    </tr>
+</section>
