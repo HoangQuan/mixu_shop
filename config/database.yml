@@ -21,11 +21,13 @@ production:
   adapter: postgresql
   encoding: unicode
   reconnect: false
-  database: my_shop_production
+  database: dc7m6d5phhc6rv
   pool: 5
-  username: root
-  password: "123456"
-  socket: /var/run/mysqld/mysqld.sock
+  username: ovuerjdjgsxkfp
+  port: 5432
+  host: ec2-54-221-227-25.compute-1.amazonaws.com
+  password: "C4yQZ5dD_pyGWB6g8HQJbLAA1o"
+  # socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
