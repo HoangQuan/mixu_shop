@@ -1,13 +1,28 @@
-<h1>Homepage</h1>
-<div id="user_nav">
-  <% if current_user %>
+<section id="product-show">
+<table class="table">
+		Hay den voi chung toi
+		chung toi cam doan ve gia tri sam pham
+	<tr>
+		<td><%=image_tag(@product.product_image1, width: "150", height: "180")%></td>
+		<td><%=image_tag(@product.product_image2, width: "150", height: "180")%></td>
+		<td><%=image_tag(@product.product_image3, width: "150", height: "180")%></td>
+	</tr>
+	<tr>
+		<td colspan="3" >
+			<div><%= @product.name %></div>
+      <div>Size: <%= @product.size %></div>
+      <div>Type: <%= @product.product_type.try(:name) %></div>
+      <div>Giá chỉ: <%= @product.price %></div>
+			Lien he voi chung toi: sdt: xxxxxxxxxxx
+		</td>
+	</tr>
+</table>
+</section>
+<div>
   	<div class="fb-like" data-href="https://www.facebook.com/ShopMixuMisa" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
   	<div class="fb-share-button" data-href="https://www.facebook.com/ShopMixuMisa" data-type="button_count"></div>
    <div id="fb-root"></div>
    <div class="fb-comments" data-href="https://www.facebook.com/ShopMixuMisa" data-numposts="5" data-colorscheme="light"></div>
-  <% else %>
-    <h3>Bạn Cần Phải Đăng nhập <%= link_to "Đăng nhập ngay", "/auth/facebook", id: "sign_in" %></h3>
-  <% end %>
 </div>
 <script>
 // function share

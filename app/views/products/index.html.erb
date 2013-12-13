@@ -1,0 +1,70 @@
+<div id="">
+  <% if current_user %>
+    <table class="table-product">
+    <% @products.each_with_index do |product, i|%>
+      <td>
+        <% if product.product_image1 %>
+          <%=link_to image_tag(product.product_image1, width: "110", height: "130"), product_path(product) %>
+        <% elsif product.product_image2 %>
+          <%=link_to image_tag(product.product_image2, width: "110", height: "130"), product_path(product) %>
+        <% elsif product.product_image3 %>
+          <%=link_to image_tag(product.product_image3, width: "110", height: "130"), product_path(product) %>
+        <% else %>
+          <%=link_to image_tag(Settings.no_image, width: "110", height: "130", alt: "anh 1"), product_path(product) %>
+        <% end %>
+        <div><%= product.name %></div>
+        <div>Size: <%= product.size %></div>
+        <div>Type: <%= product.product_type.try(:name) %></div>
+        <div>Giá chỉ: <%= product.price %></div>
+      </td>
+      <% if ((i+1)%5 == 0) %>
+        <tr></tr>
+      <% end %>
+    <% end %>
+  </table>
+  	<div class="fb-like" data-href="https://www.facebook.com/ShopMixuMisa" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+  	<div class="fb-share-button" data-href="https://www.facebook.com/ShopMixuMisa" data-type="button_count"></div>
+   <div id="fb-root"></div>
+   <div class="fb-comments" data-href="https://www.facebook.com/ShopMixuMisa" data-numposts="5" data-colorscheme="light"></div>
+  <% else %>
+    <h3>Bạn Cần Phải Đăng nhập <%= link_to "Đăng nhập ngay", "/auth/facebook", id: "sign_in" %></h3>
+  <% end %>
+</div>
+<script>
+// function share
+	(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=767124323302603";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- comment box -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=767124323302603";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="fb-root"></div>
+<!-- like box -->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=767124323302603";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- like buttom -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=767124323302603";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
