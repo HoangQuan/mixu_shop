@@ -1,0 +1,12 @@
+<%= form_for @product_type do |f| %>
+  <%= render "errors", object: f.object %>
+  <table class="table table-striped table-bordered">
+    <tr>
+      <td>Name: </td>
+      <td><%= f.text_field :name%></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><%= f.submit "submit" %></td>
+    </tr>
+  </table>
+<% end %>

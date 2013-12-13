@@ -10,19 +10,15 @@
   </head>
   <body>
     <header>
-      <%= render 'layouts/navigation' %>
+      <%= render 'layouts/admin/navigation' %>
     </header>
     <main role="main">
       <div class="container">
         <%= render 'layouts/messages' %>
         <div class="row clearfix">
-          <div class="col-md-6 column">
+
             <%= yield %>
-          </div>
-          <div class="col-md-6_right column">
-            <%= render 'layouts/ads' %>
-            <%= render 'layouts/right_layout' %>
-          </div>
+
         </div>
       </div>
     </main>
