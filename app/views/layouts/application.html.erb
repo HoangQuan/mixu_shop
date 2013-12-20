@@ -7,6 +7,8 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery.slides.min.js"></script>
   </head>
   <body>
     <header>
@@ -16,12 +18,19 @@
       <div class="container">
         <%= render 'layouts/messages' %>
         <div class="row clearfix">
+          <div class="col-md-6_left column">
+            <%= render 'layouts/ads' %>
+            <%= render 'layouts/left_layout' %>
+          </div>
           <div class="col-md-6 column">
             <%= yield %>
           </div>
           <div class="col-md-6_right column">
             <%= render 'layouts/ads' %>
             <%= render 'layouts/right_layout' %>
+          </div>
+          <div class="col-md-6_bottom column">
+            <%= render 'layouts/bottom_layout' %>
           </div>
         </div>
       </div>

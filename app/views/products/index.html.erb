@@ -1,17 +1,21 @@
 <div id="">
   <% if current_user %>
-    <table class="table-product">
+    <div class = "crumb">Trang chu > <%= link_to "Tat ca sam pham", "#" %></div>
+    
+    <table class="table-product table">
     <% @products.each_with_index do |product, i|%>
-      <td>
-        <% if product.product_image1 %>
-          <%=link_to image_tag(product.product_image1, width: "110", height: "130"), product_path(product) %>
-        <% elsif product.product_image2 %>
-          <%=link_to image_tag(product.product_image2, width: "110", height: "130"), product_path(product) %>
-        <% elsif product.product_image3 %>
-          <%=link_to image_tag(product.product_image3, width: "110", height: "130"), product_path(product) %>
-        <% else %>
-          <%=link_to image_tag(Settings.no_image, width: "110", height: "130", alt: "anh 1"), product_path(product) %>
-        <% end %>
+      <td class = "td-product">
+        <div class="product-image">
+          <% if product.product_image1? %>
+            <%=link_to image_tag(product.product_image1, width: "110", height: "130"), product_path(product) %>
+          <% elsif product.product_image2? %>
+            <%=link_to image_tag(product.product_image2, width: "110", height: "130"), product_path(product) %>
+          <% elsif product.product_image3? %>
+            <%=link_to image_tag(product.product_image3, width: "110", height: "130"), product_path(product) %>
+          <% else %>
+            <%=link_to image_tag("http://www.apeapp.org/wp-content/uploads/2013/09/cs.jpg", width: "110", height: "130", alt: "anh 1"), product_path(product) %>
+          <% end %>
+        </div>
         <div><%= product.name %></div>
         <div>Size: <%= product.size %></div>
         <div>Type: <%= product.product_type.try(:name) %></div>
@@ -21,8 +25,9 @@
         <tr></tr>
       <% end %>
     <% end %>
+    <tr><td colspan="5"><%= paginate @products %><td></tr>
   </table>
-  	<div class="fb-like" data-href="https://www.facebook.com/ShopMixuMisa" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+    <div class="fb-like" data-href="https://www.facebook.com/ShopMixuMisa" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
   	<div class="fb-share-button" data-href="https://www.facebook.com/ShopMixuMisa" data-type="button_count"></div>
    <div id="fb-root"></div>
    <div class="fb-comments" data-href="https://www.facebook.com/ShopMixuMisa" data-numposts="5" data-colorscheme="light"></div>

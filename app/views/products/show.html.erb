@@ -3,9 +3,9 @@
 		Hay den voi chung toi
 		chung toi cam doan ve gia tri sam pham
 	<tr>
-		<td><%=image_tag(@product.product_image1, width: "150", height: "180")%></td>
-		<td><%=image_tag(@product.product_image2, width: "150", height: "180")%></td>
-		<td><%=image_tag(@product.product_image3, width: "150", height: "180")%></td>
+		<td><%=image_tag(@product.product_image1? ? @product.product_image1 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")%></td>
+		<td><%=image_tag(@product.product_image2? ? @product.product_image2 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")%></td>
+		<td><%=image_tag(@product.product_image3? ? @product.product_image3 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")%></td>
 	</tr>
 	<tr>
 		<td colspan="3" >
