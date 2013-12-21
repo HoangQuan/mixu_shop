@@ -21,12 +21,12 @@ production:
   adapter: postgresql
   encoding: unicode
   reconnect: false
-  database: dc7m6d5phhc6rv
+  database: dbvh4tq5sd35c7
   pool: 5
-  username: ovuerjdjgsxkfp
+  username: hhkbnywabiiatg
   port: 5432
-  host: ec2-54-221-227-25.compute-1.amazonaws.com
-  password: "C4yQZ5dD_pyGWB6g8HQJbLAA1o"
+  host: ec2-54-204-42-135.compute-1.amazonaws.com
+  password: "xVJ8NFBRSz9e6YbP81QCwbWsrB"
   # socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
