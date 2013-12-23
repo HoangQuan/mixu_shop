@@ -3,9 +3,15 @@
 		Hay den voi chung toi
 		chung toi cam doan ve gia tri sam pham
 	<tr>
-		<td><%=image_tag(@product.product_image1? ? @product.product_image1 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")%></td>
-		<td><%=image_tag(@product.product_image2? ? @product.product_image2 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")%></td>
-		<td><%=image_tag(@product.product_image3? ? @product.product_image3 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")%></td>
+		<td><%= link_to (image_tag(@product.product_image1? ? @product.product_image1 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")), "", class: "shop_detail1" %>
+      <div><%= link_to "Phóng to", "#", class: "shop_detail1" %></div>
+    </td>
+		<td><%= link_to (image_tag(@product.product_image2? ? @product.product_image2 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")), "#", class: "shop_detail2"%>
+      <div><%= link_to "Phóng to", "", class: "shop_detail2" %></div>
+    </td>
+		<td><%= link_to (image_tag(@product.product_image3? ? @product.product_image3 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")), "#", class: "shop_detail3"%>
+      <div><%= link_to "Phóng to", "", class: "shop_detail3" %></div>
+    </td>
 	</tr>
 	<tr>
 		<td colspan="3" >
@@ -17,6 +23,11 @@
 		</td>
 	</tr>
 </table>
+<div id="product-show">
+  <%= render "product1_show_modal"%>
+  <%= render "product2_show_modal"%>
+  <%= render "product3_show_modal"%>
+</div>
 </section>
 <div>
   	<div class="fb-like" data-href="https://www.facebook.com/ShopMixuMisa" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
