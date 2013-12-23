@@ -3,13 +3,13 @@
 		Hay den voi chung toi
 		chung toi cam doan ve gia tri sam pham
 	<tr>
-		<td><%= link_to (image_tag(@product.product_image1? ? @product.product_image1 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")), "", class: "shop_detail1" %>
+		<td><%= link_to (image_tag(@product.image_fb_url1? ? @product.image_fb_url1 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")), "", class: "shop_detail1" %>
       <div><%= link_to "Phóng to", "#", class: "shop_detail1" %></div>
     </td>
-		<td><%= link_to (image_tag(@product.product_image2? ? @product.product_image2 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")), "#", class: "shop_detail2"%>
+		<td><%= link_to (image_tag(@product.image_fb_url2? ? @product.image_fb_url2 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")), "#", class: "shop_detail2"%>
       <div><%= link_to "Phóng to", "", class: "shop_detail2" %></div>
     </td>
-		<td><%= link_to (image_tag(@product.product_image3? ? @product.product_image3 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")), "#", class: "shop_detail3"%>
+		<td><%= link_to (image_tag(@product.image_fb_url3? ? @product.image_fb_url3 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif", width: "150", height: "180")), "#", class: "shop_detail3"%>
       <div><%= link_to "Phóng to", "", class: "shop_detail3" %></div>
     </td>
 	</tr>

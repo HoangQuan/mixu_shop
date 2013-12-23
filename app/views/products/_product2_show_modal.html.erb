@@ -4,7 +4,7 @@
     <h3><%= @product.name %>(Ảnh 2)</h3>
   </div>
   <div class="modal-body">
-    <div><%=image_tag(@product.product_image2? ? @product.product_image2 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif")%></div>
+    <div><%=image_tag(@product.image_fb_url2? ? @product.image_fb_url2 : "http://images2.wikia.nocookie.net/__cb20111016135244/caw/images/9/9f/No-Image-Available.gif")%></div>
   </div>
   <div class="modal-footer">
     <a href="#" class="btn" data-dismiss="modal">Back</a>

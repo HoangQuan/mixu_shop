@@ -15,25 +15,33 @@
       <td><%= f.text_field :price%></td>
     </tr>
     <tr>
-      <td>Image1: </td>
+      <td>Amount: </td>
+      <td><%= f.number_field :amount%></td>
+    </tr>
+    <tr>
+      <td>Image fb url1: </td>
       <td>
-        <%= f.file_field :product_image1 %>
-        <%= image_tag @product.product_image1 if @product.product_image1 %>
+        <%= f.text_field :image_fb_url1 %>
+        <%= image_tag @product.image_fb_url1 if @product.image_fb_url1 %>
       </td>
     </tr>
     <tr>
-      <td>Image2: </td>
+      <td>Image fb url2: </td>
       <td>
-        <%= f.file_field :product_image2 %>
-        <%= image_tag @product.product_image2 if @product.product_image2 %>
+        <%= f.text_field :image_fb_url2 %>
+        <%= image_tag @product.image_fb_url2 if @product.image_fb_url2 %>
       </td>
     </tr>
     <tr>
-      <td>Image3: </td>
+      <td>Image fb url3: </td>
       <td>
-        <%= f.file_field :product_image3 %>
-        <%= image_tag @product.product_image3 if @product.product_image3 %>
+        <%= f.text_field :image_fb_url3 %>
+        <%= image_tag @product.image_fb_url3 if @product.image_fb_url3 %>
       </td>
+    </tr>
+    <tr>
+      <td>Status: </td>
+      <td><%= f.select :status, options_for_select([["Còn hàng", 1],["Hết hàng", 0]]) %></td>
     </tr>
     <tr>
       <td>Type: </td>

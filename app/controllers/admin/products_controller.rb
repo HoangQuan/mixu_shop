@@ -13,7 +13,8 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    @product = Admin::Product.new(params.require(:admin_product).permit(:name, :size, :price, :product_type_id, :product_image1, :product_image2, :product_image3))
+    @product = Admin::Product.new(params.require(:admin_product).permit(:name,
+     :size, :price, :product_type_id, :image_fb_url1, :image_fb_url2, :image_fb_url3))
     if @product.valid?
       @product.save
       redirect_to admin_product_path(@product), notice: :".created"
@@ -28,7 +29,8 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product = Admin::Product.find(params[:id])
-    product = params.require(:admin_product).permit(:name, :size, :price, :product_type_id, :product_image1, :product_image2, :product_image3)
+    product = params.require(:admin_product).permit(:name, :size,
+     :price, :product_type_id, :image_fb_url1, :image_fb_url2, :image_fb_url3)
     if @product.update(product)
       redirect_to admin_product_path(@product), notice: :".updateted"
     else

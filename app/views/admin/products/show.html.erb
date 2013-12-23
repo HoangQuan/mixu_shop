@@ -16,20 +16,28 @@
       <td><%= @product.size%></td>
     </tr>
     <tr>
+      <th>Amount: </th>
+      <td><%= @product.amount %></td>
+    </tr>
+    <tr>
       <th>Type: </th>
       <td><%= @product.product_type.try(:name)%></td>
     </tr>
     <tr>
-      <th>Image1: </th>
-      <td><%= image_tag @product.product_image1 if @product.product_image1 %></td>
+      <th>Status: </th>
+      <td><%= @product.status==1 ? "Còn Hàng" : "Hết Hàng"%></td>
     </tr>
     <tr>
-      <th>Image2: </th>
-      <td><%= image_tag @product.product_image2 if @product.product_image2 %></td>
+      <th>Image fb1: </th>
+      <td><%= image_tag @product.image_fb_url1 if @product.image_fb_url1 %></td>
     </tr>
     <tr>
-      <th>Image3: </th>
-      <td><%= image_tag @product.product_image3 if @product.product_image3 %></td>
+      <th>Image fb2: </th>
+      <td><%= image_tag @product.image_fb_url2 if @product.image_fb_url2 %></td>
+    </tr>
+    <tr>
+      <th>Image fb3: </th>
+      <td><%= image_tag @product.image_fb_url3 if @product.image_fb_url3 %></td>
     </tr>
     <tr>
       <td colspan="2">

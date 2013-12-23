@@ -11,7 +11,8 @@
     </tr>
     <% @product_types.each_with_index do |product_type, i|%>  
     <tr>
-      <td><%= i+1 %></td>
+      <% j = params[:page] ? 5*((params[:page].to_i)-1) : 0 %>
+      <td><%= i+j+1 %></td>
       <td><%= product_type.name %></td>
       <td><%= link_to "Show", admin_product_type_path(product_type) %></td>
       <td><%= link_to "Edit", edit_admin_product_type_path(product_type) %></td>

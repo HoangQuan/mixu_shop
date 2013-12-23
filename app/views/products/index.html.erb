@@ -6,12 +6,12 @@
     <% @products.each_with_index do |product, i|%>
       <td class = "td-product">
         <div class="product-image">
-          <% if product.product_image1? %>
-            <%=link_to image_tag(product.product_image1, width: "110", height: "130"), product_path(product) %>
-          <% elsif product.product_image2? %>
-            <%=link_to image_tag(product.product_image2, width: "110", height: "130"), product_path(product) %>
-          <% elsif product.product_image3? %>
-            <%=link_to image_tag(product.product_image3, width: "110", height: "130"), product_path(product) %>
+          <% if product.image_fb_url1? %>
+            <%=link_to image_tag(product.image_fb_url1, width: "110", height: "130"), product_path(product) %>
+          <% elsif product.image_fb_url2? %>
+            <%=link_to image_tag(product.image_fb_url2, width: "110", height: "130"), product_path(product) %>
+          <% elsif product.image_fb_url3? %>
+            <%=link_to image_tag(product.image_fb_url3, width: "110", height: "130"), product_path(product) %>
           <% else %>
             <%=link_to image_tag("http://www.apeapp.org/wp-content/uploads/2013/09/cs.jpg", width: "110", height: "130", alt: "anh 1"), product_path(product) %>
           <% end %>
@@ -20,6 +20,8 @@
         <div>Size: <%= product.size %></div>
         <div>Type: <%= product.product_type.try(:name) %></div>
         <div>Giá chỉ: <%= product.price %></div>
+        <div>Trạng thái: <%= product.status==1 ? "Còn Hàng" : "Hết Hàng" %></div>
+        <div>Số lượng: <%= product.amount%></div>
       </td>
       <% if ((i+1)%5 == 0) %>
         <tr></tr>
