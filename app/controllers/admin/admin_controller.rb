@@ -13,7 +13,6 @@ private
   end
   def admin_user
     if current_user
-      flash[:notice] = "You are not Admin"
       redirect_to(root_path)  unless current_user.admin?
     end
   end
