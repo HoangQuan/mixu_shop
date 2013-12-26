@@ -30,12 +30,12 @@
                   <li><%= link_to "Settings", edit_admin_user_path(current_user) %></li>
                   <li class="divider"></li>
                   <li>
-                    <%= link_to "Sign out", signout_path, method: "delete" %>
+                    <%= link_to "Đăng xuất", signout_path %>
                   </li>
                 </ul>
               </li>
             <% else %>
-              <li><%= link_to "Sign in", signin_path %></li>
+              <li><%= link_to "Đăng nhập ngay", "/auth/facebook", id: "sign_in" %></li>
             <% end %>
           </ul>
         </nav>
