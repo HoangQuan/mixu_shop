@@ -1,5 +1,6 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::AdminController
   layout "admin"
+  before_filter :admin_user
 
   def index
     @users = User.order(:updated_at).page(params[:page]).per(15)

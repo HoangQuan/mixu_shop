@@ -1,5 +1,6 @@
-class Admin::ProductTypesController < ApplicationController
+class Admin::ProductTypesController < Admin::AdminController
   layout "admin"
+  before_filter :admin_user
 
   def index
     @product_types = Admin::ProductType.order(:updated_at).page(params[:page]).per(5)
