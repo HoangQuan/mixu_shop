@@ -1,0 +1,17 @@
+<section user-show>
+  <table class="table table-striped table-bordered"> 
+    <tr>
+      <th>Avatar: </th>
+      <td><%= image_tag @user.large_image %></td>
+    </tr>
+    <tr>
+      <th>Name: </th>
+      <td><%= @user.name%></td>
+    </tr>
+    <tr>
+      <th>Admin: </th>
+      <td><%= @user.admin%></td>
+    </tr>
+  </table>
+  <%= link_to "Back to home", root_path %>
+</section>

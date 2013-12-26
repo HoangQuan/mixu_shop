@@ -11,10 +11,33 @@
       <%= link_to 'Home', root_path, class: 'navbar-brand' %>
       <%= link_to 'Sản phẩm', admin_products_path, class: 'navbar-brand' %>
       <%= link_to 'Loại Sản phẩm', admin_product_types_path, class: 'navbar-brand' %>
-      <%= link_to 'Khac', root_path, class: 'navbar-brand' %>
+      <%= link_to 'Người dùng', admin_users_path, class: 'navbar-brand' %>
+      <%= link_to 'Khác', root_path, class: 'navbar-brand' %>
       <% if current_user %>
-        <div class='login_name'><%=current_user.name%> Đã đăng nhập
-          <%= link_to " (Đăng xuất)", signout_path %><div>
+      <div class='login_name'>
+        <nav>
+          <ul class="nav pull-right">
+            <% if current_user %>
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Account <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%=link_to (image_tag current_user.small_image), user_path(current_user) %></li>
+                  <li><%= link_to "Profile", admin_user_path(current_user) %></li>
+                  <li><%= link_to "Settings", edit_admin_user_path(current_user) %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Sign out", signout_path, method: "delete" %>
+                  </li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to "Sign in", signin_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
       <% else %>
         <div class='login_name'><%= link_to "Đăng nhập ngay", "/auth/facebook", id: "sign_in" %></div>
       <% end %>

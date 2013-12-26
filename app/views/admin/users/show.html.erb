@@ -1,0 +1,25 @@
+<section products-show>
+  <% if notice %>
+    <%= notice %>
+  <% end %>
+  <table class="table table-striped table-bordered"> 
+    <tr>
+      <th>ID: </th>
+      <td><%= @user.id%></td>
+    </tr>
+    <tr>
+      <th>Name: </th>
+      <td><%= @user.name%></td>
+    </tr>
+    <tr>
+      <th>Admin: </th>
+      <td><%= @user.admin%></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%= link_to "Back", admin_users_path %>
+        <%= link_to "Edit", edit_admin_user_path(@user) %>
+        <%= link_to "Destroy", admin_user_path(@user), method: :delete, data: {confirm: "Are you sure?"} %>
+      </td>
+    </tr>
+</section>
