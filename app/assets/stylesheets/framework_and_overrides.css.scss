@@ -46,9 +46,7 @@
 
   .login_name {
     float: right;
-    line-height: 20px;
-    padding: 7px 235px;
-    color: red;
+    margin: 5px;
   }
   .login_require {
     float: right;
@@ -121,7 +119,11 @@ section {
   .copyright .info a {color: #000;}
 
   .crumb {
-    margin: 10px 427px 0px 3px;
+    float: left;
+    padding: 15px 15px;
+  }
+  .test {
+    padding: 10px 10px;
   }
 
   .product-image > img {

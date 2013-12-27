@@ -1,16 +1,19 @@
 <div id="">
   <% if current_user %>
-    <div class = "crumb">Trang Chủ > <%= link_to "Tất Cả Sản Phẩm", "#" %></div>
-    <div class="search-product">
-      <table>
-        <%= search_form_for @q do |f| %>
-          <tr>
-            <td>Tên: <%= f.text_field :name_cont %></td>
-            <td>Loai: <%= f.collection_select :product_type_id_eq, ProductType.all, :id, :name, include_blank: "Tất Cả", height: "24px" %></td>
-            <td><%= f.submit "Tìm Kiếm" %></td>
-          </tr>
-        <% end %>
-      </table>
+    <div class="test">
+      <div class="search-product">
+        <table>
+          <%= search_form_for @q do |f| %>
+            <tr>
+              <td>Tìm Kiếm Sản Phẩm: </td>
+              <td>Tên: <%= f.text_field :name_cont %>
+              <td>Loai: <%= f.collection_select :product_type_id_eq, ProductType.all, :id, :name, include_blank: "Tất Cả", height: "24px" %></td>
+              <td><%= f.submit "Tìm Kiếm" %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class = "crumb">Trang Chủ > <%= link_to "Tất Cả Sản Phẩm", root_path %></div>
     </div>
     <table class="table-product table">
     <% @products.each_with_index do |product, i|%>
