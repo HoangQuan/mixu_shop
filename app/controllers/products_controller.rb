@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Admin::Product.order_by_updated.page(params[:page]).per(20)
+    @q = Product.order_by_updated.search params[:q]
+    @products = @q.result.page(params[:page]).per(15)
   end
 
   def show
