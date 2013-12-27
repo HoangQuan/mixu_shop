@@ -8,6 +8,7 @@ gem 'mysql2'
 gem "pry"
 # gem "carrierwave"
 gem "kaminari"
+gem "ransack"
 
 gem 'bootstrap-sass'
 group :development do
